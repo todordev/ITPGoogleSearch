@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <extension type="package" version="2.5" method="upgrade">
 	<name>ITP Google Search Package</name>
-	<packagename>ITP Google Search</packagename>
+	<packagename>itpgooglesearch</packagename>
 	<creationDate>May, 2012</creationDate>
 	<author>Todor Iliev</author>
 	<authorEmail>todor@itprism.com</authorEmail>
