@@ -40,7 +40,7 @@ class ItpGoogleSearchVersion {
      * 
      * @var integer
      */
-    public $devLevel   = '2';
+    public $devLevel   = '3';
     
     /**
      * Development Status
@@ -50,11 +50,18 @@ class ItpGoogleSearchVersion {
     public $devStatus = 'Stable';
     
     /**
+     * Release Type
+     * 
+     * @var integer
+     */
+    public $releaseType  = 'Lite';
+    
+    /**
      * Date
      * 
      * @var string
      */
-    public $releaseDate= '23-June-2012';
+    public $releaseDate= '22-April-2013';
     
     /**
      * License
@@ -92,9 +99,9 @@ class ItpGoogleSearchVersion {
     public $developer  = '<a href="http://itprism.com" target="_blank">ITPrism</a>';
 
     /**
-     *  Build long format of the vpversion text
+     *  Build long format of the version text
      *
-     * @return string Long format vpversion
+     * @return string Long format version
      */
     public function getLongVersion() {
         
@@ -102,11 +109,23 @@ class ItpGoogleSearchVersion {
     	   $this->product .' '. $this->release .'.'. $this->devLevel .' ' . 
     	   $this->devStatus . ' '. $this->releaseDate;
     }
+    
+    /**
+     *  Build medium format of the verion text
+     *
+     * @return string Medium format version
+     */
+    public function getMediumVersion() {
+        
+    	return 
+    	   $this->release .'.'. $this->devLevel .' ' . 
+    	   $this->releaseType . ' ( ' .$this->devStatus . ' )';
+    }   
 
     /**
-     *  Build short format of the vpversion text
+     *  Build short format of the version text
      *
-     * @return string Short vpversion format
+     * @return string Short version format
      */
     public function getShortVersion() {
         return $this->release .'.'. $this->devLevel;

@@ -2,19 +2,19 @@
 <extension type="package" version="2.5" method="upgrade">
 	<name>ITP Google Search Package</name>
 	<packagename>itpgooglesearch</packagename>
-	<creationDate>May, 2012</creationDate>
 	<author>Todor Iliev</author>
 	<authorEmail>todor@itprism.com</authorEmail>
 	<authorUrl>http://itprism.com</authorUrl>
 	<copyright>Copyright (C) 2010 Todor Iliev ( ITPrism.com )</copyright>
 	<license>http://www.gnu.org/copyleft/gpl.html</license>
-	<version>2.2</version>
+	<version>2.3</version>
+	<creationDate>22 April, 2013</creationDate>
 	<url>http://itprism.com</url>
 	<packager>Todor Iliev</packager>
 	<packagerurl>http://itprism.com</packagerurl>
 	<description><![CDATA[
 	<p><a href="http://itprism.com/free-joomla-extensions/google-search-component" target="_blank">ITP Google Search</a> is a component that adds a search engine on your site. The search engine is powered by Google.</p>
-	<p>Invest in the extension and help for its improvement. You can <a href="http://itprism.com/sponsorship" title="Sponsoring" target="_blank">sponsor the extension via SMS or PayPal</a>.</p>
+	<p>Invest in the extension and help for its improvement. You can <a href="http://itprism.com/sponsorship" title="Sponsoring" target="_blank">sponsor the extension via SMS, PayPal or Bitcoin</a>.</p>
 	<p><a href="http://itprism.com/" target="_blank">Subscribe for the newsletter</a> to receive information about updates and new ITPrism extensions.</p>
 	<p>Please, <a href="http://extensions.joomla.org/extensions/search-a-indexing/web-search/12620" target="_blank">vote for the extension</a> on Joomla! extensions directory.</p>
 	]]>

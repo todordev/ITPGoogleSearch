@@ -34,7 +34,7 @@ class ItpGoogleSearchViewCpanel extends JView {
      * @since   1.6
      */
     protected function addToolbar(){
-        JToolBarHelper::title(JText::_("COM_ITPGOOGLESEARCH_CPANEL_TITLE"), 'vip-properties');
+        JToolBarHelper::title(JText::_("COM_ITPGOOGLESEARCH_CPANEL_TITLE"), 'itp-properties');
     }
 
 }

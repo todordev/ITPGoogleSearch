@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="2.5" method="upgrade">
 	<name>COM_ITPGOOGLESEARCH</name>
-	<creationDate>May, 2010</creationDate>
 	<author>Todor Iliev</author>
 	<authorEmail>todor@itprism.com</authorEmail>
 	<authorUrl>http://itprism.com</authorUrl>
 	<copyright>Copyright (C) 2010 Todor Iliev ( ITPrism.com )</copyright>
 	<license>http://www.gnu.org/copyleft/gpl.html</license>
-	<version>2.2</version>
+	<version>2.3</version>
+	<creationDate>22 April, 2013</creationDate>
 	<description>COM_ITPGOOGLESEARCH_DESCRIPTION</description>
 	
 	<install>
@@ -22,7 +22,7 @@
         </sql>
     </uninstall>
 	
-	<update> <!-- Runs on update; New in 1.6 -->
+	<update> 
 		<schemas>
 				<schemapath type="mysql">sql/updates</schemapath>
 		</schemas>
@@ -52,20 +52,20 @@
 	<administration>
 		<menu img="../media/com_itpgooglesearch/images/menu_extension_icon.png" link="option=com_itpgooglesearch">COM_ITPGOOGLESEARCH</menu>
 	
-	<files folder="admin">		    				
-		<folder>libraries</folder>
-		<folder>sql</folder>
-		<folder>views</folder>		
-		<filename>controller.php</filename>
-		<filename>index.html</filename>
-		<filename>config.xml</filename> 
-        <filename>itpgooglesearch.php</filename>
-    </files>
-	
-	<languages folder="admin">
-		<language tag="en-GB">language/en-GB/en-GB.com_itpgooglesearch.ini</language>
-		<language tag="en-GB">language/en-GB/en-GB.com_itpgooglesearch.sys.ini</language>
-	</languages>
+		<files folder="admin">		    				
+			<folder>libraries</folder>
+			<folder>sql</folder>
+			<folder>views</folder>		
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+			<filename>config.xml</filename> 
+	        <filename>itpgooglesearch.php</filename>
+	    </files>
 		
-</administration>
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB/en-GB.com_itpgooglesearch.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_itpgooglesearch.sys.ini</language>
+		</languages>
+		
+    </administration>
 </extension>

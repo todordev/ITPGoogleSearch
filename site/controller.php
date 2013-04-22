@@ -46,13 +46,8 @@ class ITPGoogleSearchController extends JController {
             'lang'              => 'CMD',
         );
 
-        try {
-            return parent::display($cachable, $safeurlparams);
-        } catch ( Exception $e ) {
-            JLog::add($e->getMessage());
-            JError::raiseError( 500, JText::_( 'ITP_ERROR_SYSTEM' ) );
-        }
-        
+        parent::display($cachable, $safeurlparams);
+        return $this;
     }
     
 } 

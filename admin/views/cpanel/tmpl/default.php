@@ -35,7 +35,7 @@ defined('_JEXEC') or die;
     <tbody>
         <tr>
             <td><?php echo JText::_("COM_ITPGOOGLESEARCH_INSTALLED_VERSION");?></td>
-            <td><?php echo $this->version->getShortVersion();?></td>
+            <td><?php echo $this->version->getMediumVersion();?></td>
         </tr>
         <tr>
             <td><?php echo JText::_("COM_ITPGOOGLESEARCH_RELEASE_DATE");?></td>
