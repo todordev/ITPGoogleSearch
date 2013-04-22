@@ -25,7 +25,7 @@ defined('_JEXEC') or die;
 </div>
 <div id="itp-itprism">
     <a href="http://itprism.com/free-joomla-extensions/others/google-search-integration"  target="_blank" ><img src="../media/com_itpgooglesearch/images/extension_logo.png" alt="<?php echo JText::_("COM_ITPGOOGLESEARCH");?>"/></a>
-    <a href="http://itprism.com" title="A Product of ITPrism.com" target="_blank"><img src="../media/com_itpgooglesearch/images/product_of_itprism.png" alt="A Product of ITPrism.com" /></a>
+    <a href="http://itprism.com" title="<?php echo JText::_("COM_ITPGOOGLESEARCH_ITPRIMS_PRODUCT");?>" target="_blank"><img src="../media/com_itpgooglesearch/images/product_of_itprism.png" alt="<?php echo JText::_("COM_ITPGOOGLESEARCH_ITPRIMS_PRODUCT");?>" /></a>
     <p><?php echo JText::_("COM_ITPGOOGLESEARCH_YOUR_VOTE"); ?></p>
     <p><?php echo JText::_("COM_ITPGOOGLESEARCH_SPONSORSHIP"); ?></p>
     <p><?php echo JText::_("COM_ITPGOOGLESEARCH_SUBSCRIPTION"); ?></p>
