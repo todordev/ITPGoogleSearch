@@ -1,16 +1,13 @@
 <?php
 /**
- * @package      ITPrism Components
- * @subpackage   ITPGoogleSearch
+ * @package      ITPGoogleSearch
+ * @subpackage   Components
  * @author       Todor Iliev
- * @copyright    Copyright (C) 2010 Todor Iliev <todor@itprism.com>. All rights reserved.
+ * @copyright    Copyright (C) 2013 Todor Iliev <todor@itprism.com>. All rights reserved.
  * @license      http://www.gnu.org/copyleft/gpl.html GNU/GPL
- * ITPGoogleSearch is free software. This version may have been modified pursuant
- * to the GNU General Public License, and as distributed it includes or
- * is derivative of works licensed under the GNU General Public License or
- * other free or open source software licenses.
  */
 
+// no direct access
 defined('JPATH_BASE') or die;
 
 /**
@@ -40,7 +37,7 @@ class ItpGoogleSearchVersion {
      * 
      * @var integer
      */
-    public $devLevel   = '3';
+    public $devLevel   = '4';
     
     /**
      * Development Status
@@ -61,7 +58,7 @@ class ItpGoogleSearchVersion {
      * 
      * @var string
      */
-    public $releaseDate= '22-April-2013';
+    public $releaseDate= '18-September-2013';
     
     /**
      * License
@@ -75,7 +72,7 @@ class ItpGoogleSearchVersion {
      * 
      * @var string
      */
-    public $copyright  = '&copy; 2010 ITPrism. All rights reserved.';
+    public $copyright  = '&copy; 2013 ITPrism. All rights reserved.';
     
     /**
      * URL

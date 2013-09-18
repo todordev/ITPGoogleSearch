@@ -1,23 +1,22 @@
 <?php
 /**
- * @package      ITPrism Components
- * @subpackage   ITPGoogleSearch
+ * @package      ITPGoogleSearch 
+ * @subpackage   Components
  * @author       Todor Iliev
- * @copyright    Copyright (C) 2010 Todor Iliev <todor@itprism.com>. All rights reserved.
+ * @copyright    Copyright (C) 2013 Todor Iliev <todor@itprism.com>. All rights reserved.
  * @license      http://www.gnu.org/copyleft/gpl.html GNU/GPL
- * ITPGoogleSearch is free software. This version may have been modified pursuant
- * to the GNU General Public License, and as distributed it includes or
- * is derivative of works licensed under the GNU General Public License or
- * other free or open source software licenses.
  */
 
 // No direct access.
 defined('_JEXEC') or die;
 
-require_once ( JPATH_COMPONENT_ADMINISTRATOR . DS. "libraries" . DS ."init.php" );
+require_once JPATH_COMPONENT_ADMINISTRATOR . DIRECTORY_SEPARATOR . "libraries" . DIRECTORY_SEPARATOR ."init.php";
 
 jimport('joomla.application.component.controller');
 
-$controller = JController::getInstance('ITPGoogleSearch');
-$controller->execute(JRequest::getCmd('task'));
+$app = JFactory::getApplication();
+/** @var $app JSite **/
+
+$controller = JControllerLegacy::getInstance('ITPGoogleSearch');
+$controller->execute($app->input->getCmd('task'));
 $controller->redirect();

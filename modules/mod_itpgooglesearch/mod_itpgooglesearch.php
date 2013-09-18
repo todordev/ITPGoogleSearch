@@ -1,20 +1,20 @@
 <?php
 /**
- * @package      ITPrism Modules
- * @subpackage   ITPGoogleSearch
+ * @package      ITPGoogleSearch
+ * @subpackage   Modules
  * @author       Todor Iliev
- * @copyright    Copyright (C) 2010 Todor Iliev <todor.iliev@itprism.com>. All rights reserved.
+ * @copyright    Copyright (C) 2013 Todor Iliev <todor.iliev@itprism.com>. All rights reserved.
  * @license      http://www.gnu.org/copyleft/gpl.html GNU/GPL
- * ITPGoogleSearch is free software. This version may have been modified pursuant
- * to the GNU General Public License, and as distributed it includes or
- * is derivative of works licensed under the GNU General Public License or
- * other free or open source software licenses.
  */
 
 // no direct access 
 defined('_JEXEC') or die; 
 
-$moduleClassSfx = htmlspecialchars($params->get('moduleclass_sfx'));
-$phrase         = htmlentities(JRequest::getVar("q", "", "get"), ENT_QUOTES, "UTF-8");
+$moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'), ENT_QUOTES, "utf-8");
+
+$app = JFactory::getApplication();
+/** @var $app JSite */
+
+$phrase = htmlentities($app->getUserStateFromRequest("com_itpgooglesearch.query", "gsquery"), ENT_QUOTES, "UTF-8");
 
 require JModuleHelper::getLayoutPath('mod_itpgooglesearch', $params->get('layout', 'default'));

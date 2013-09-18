@@ -1,37 +1,64 @@
 <?php
 /**
- * @package      ITPrism Components
- * @subpackage   ITPGoogleSearch
+ * @package      ITPGoogleSearch 
+ * @subpackage   Components
  * @author       Todor Iliev
- * @copyright    Copyright (C) 2010 Todor Iliev <todor@itprism.com>. All rights reserved.
+ * @copyright    Copyright (C) 2013 Todor Iliev <todor@itprism.com>. All rights reserved.
  * @license      http://www.gnu.org/copyleft/gpl.html GNU/GPL
- * ITPGoogleSearch is free software. This version may have been modified pursuant
- * to the GNU General Public License, and as distributed it includes or
- * is derivative of works licensed under the GNU General Public License or
- * other free or open source software licenses.
  */
 
-defined('_JEXEC') or die();?>
-<div id="cse" style="width: 100%;">Loading</div>
-<script src="//www.google.com/jsapi" type="text/javascript"></script>
-<script type="text/javascript"> 
-  google.load('search', '1', {language : '<?php echo $this->params->get("language");?>'});
-  google.setOnLoadCallback(function() {
-    var customSearchOptions = {};  
-    var customSearchControl = new google.search.CustomSearchControl('<?php echo $this->params->get("search_engine_id");?>', customSearchOptions);
-    
-    customSearchControl.setResultSetSize(google.search.Search.LARGE_RESULTSET);
+// No direct access
+defined('_JEXEC') or die;
+?>
 
-    var options = new google.search.DrawOptions();
-    <?php if($this->params->get("auto_complete")) {?>
-    options.setAutoComplete(true);
-    <?php }?>
-    customSearchControl.draw('cse', options);
+<?php if(!$this->params->get("display_search_form", 1)) {?>
+<style>
+#___gcse_0 {
+    display: none !important;
+}
+</style>
+<?php }?>
+
+<div class="gcse-searchbox" data-gname="gselement" data-queryParameterName="gsquery" ><?php echo JText::_("COM_ITPGOOGLESEARCH_LOADING")?></div>
+<div class="gcse-searchresults" data-gname="gselement" ></div>
+
+<script>
+
+var initGoogleSearchBox = function() {
+	
+  if (document.readyState == 'complete') {
+	  
+	  var element = google.search.cse.element.getElement("___gcse_0");
+  } else {
+	  
+    // Document is not ready yet, when CSE element is initialized.
+    google.setOnLoadCallback(function() {
+
+       var element = google.search.cse.element.getElement("gselement");
+       <?php if(!empty($this->phrase)) {?>
+       element.execute('<?php echo htmlspecialchars($this->phrase, ENT_QUOTES, "UTF-8");?>');
+       <?php }?>
+       console.log(element);
+       
+    }, true);
     
-    <?php if ( !empty( $this->phrase ) ) { ?>
-    customSearchControl.execute("<?php echo addslashes($this->phrase);?>");
-    <?php } ?>
-    
-  }, true);
+  }
+};
+
+// Insert it before the CSE code snippet so that cse.js can take the script
+// parameters, like parsetags, callbacks.
+window.__gcse = {
+  callback: initGoogleSearchBox
+};
+
+
+(function() {
+  var cx = '<?php echo $this->params->get("search_engine_id");?>'; // Insert your own Custom Search engine ID here
+  var gcse = document.createElement('script'); gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = (document.location.protocol == 'https' ? 'https:' : 'http:') +
+      '//www.google.com/cse/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+})();
+
 </script>
-<?php echo $this->version->backlink;?>

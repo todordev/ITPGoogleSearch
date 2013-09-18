@@ -1,40 +1,22 @@
 <?php
 /**
- * @package      ITPrism Components
- * @subpackage   ITPGoogleSearch
+ * @package      ITPGoogleSearch 
+ * @subpackage   Components
  * @author       Todor Iliev
- * @copyright    Copyright (C) 2010 Todor Iliev <todor@itprism.com>. All rights reserved.
+ * @copyright    Copyright (C) 2013 Todor Iliev <todor@itprism.com>. All rights reserved.
  * @license      http://www.gnu.org/copyleft/gpl.html GNU/GPL
- * ITPGoogleSearch is free software. This version may have been modified pursuant
- * to the GNU General Public License, and as distributed it includes or
- * is derivative of works licensed under the GNU General Public License or
- * other free or open source software licenses.
  */
 
 // no direct access
-defined( '_JEXEC' ) or die( 'Restricted access' );
+defined('_JEXEC') or die;
 
-jimport( 'joomla.application.component.modellist' );
+jimport('joomla.application.component.modellist');
 
 /**
- * It is a search model
+ * This model contains method used for managing search functionality.
  * 
- * @author Todor Iliev
  */
 class ItpGoogleSearchModelSearch extends JModelList {
-    
-	 /**
-     * Constructor.
-     *
-     * @param   array   An optional associative array of configuration settings.
-     * @see     JController
-     * @since   1.6
-     */
-    public function  __construct($config = array()) {
-        
-        parent::__construct($config);
-		
-    }
     
     /**
      * Method to auto-populate the model state.
@@ -45,14 +27,13 @@ class ItpGoogleSearchModelSearch extends JModelList {
      * @since   1.6
      */
     protected function populateState($ordering = 'ordering', $direction = 'ASC'){
-        $app = JFactory::getApplication();
         
-        $this->setState('itpgsq', JRequest::getString('itpgsq',"","post"));
+        $app = JFactory::getApplication();
         
         $params = $app->getParams();
         $this->setState('params', $params);
         
-        //        $this->setState('filter.language', $app->getLanguageFilter());
+        $this->setState('itpgsq', $app->input->get('itpgsq'));
 
     }
 
@@ -68,7 +49,8 @@ class ItpGoogleSearchModelSearch extends JModelList {
      * @return  string      A store id.
      * @since   1.6
      */
-    protected function getStoreId($id = ''){
+    protected function getStoreId($id = '') {
+        
         // Compile the store id.
         $id .= ':' . $this->getState('itpgsq');
         

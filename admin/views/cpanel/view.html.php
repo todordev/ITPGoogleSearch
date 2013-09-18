@@ -1,26 +1,20 @@
 <?php
 /**
- * @package      ITPrism Components
- * @subpackage   ITPGoogleSearch
+ * @package      ITPGoogleSearch 
+ * @subpackage   Components
  * @author       Todor Iliev
- * @copyright    Copyright (C) 2010 Todor Iliev <todor@itprism.com>. All rights reserved.
+ * @copyright    Copyright (C) 2013 Todor Iliev <todor@itprism.com>. All rights reserved.
  * @license      http://www.gnu.org/copyleft/gpl.html GNU/GPL
- * ITPGoogleSearch is free software. This version may have been modified pursuant
- * to the GNU General Public License, and as distributed it includes or
- * is derivative of works licensed under the GNU General Public License or
- * other free or open source software licenses.
  */
 
 // no direct access
-defined('_JEXEC') or die();
+defined('_JEXEC') or die;
 
 jimport('joomla.application.component.view');
 
-class ItpGoogleSearchViewCpanel extends JView {
+class ItpGoogleSearchViewCpanel extends JViewLegacy {
     
     public function display($tpl = null){
-        
-        JHtml::_('behavior.modal', 'a.modal');
         
         $this->version = new ItpGoogleSearchVersion();
         
@@ -34,7 +28,18 @@ class ItpGoogleSearchViewCpanel extends JView {
      * @since   1.6
      */
     protected function addToolbar(){
-        JToolBarHelper::title(JText::_("COM_ITPGOOGLESEARCH_CPANEL_TITLE"), 'itp-properties');
+        
+        JToolBarHelper::title(JText::_("COM_ITPGOOGLESEARCH_CPANEL_TITLE"));
+        
+        JToolBarHelper::preferences('com_itpgooglesearch');
     }
 
+	/**
+	 * Method to set up the document properties
+	 * @return void
+	 */
+	protected function setDocument() {
+	    $this->document->setTitle(JText::_('COM_ITPGOOGLESEARCH_CPANEL_TITLE'));
+	}
+	
 }
