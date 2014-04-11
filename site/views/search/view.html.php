@@ -3,7 +3,7 @@
  * @package      ITPGoogleSearch 
  * @subpackage   Components
  * @author       Todor Iliev
- * @copyright    Copyright (C) 2013 Todor Iliev <todor@itprism.com>. All rights reserved.
+ * @copyright    Copyright (C) 2014 Todor Iliev <todor@itprism.com>. All rights reserved.
  * @license      http://www.gnu.org/copyleft/gpl.html GNU/GPL
  */
 
@@ -14,15 +14,26 @@ jimport('joomla.application.component.view');
 
 class ITPGoogleSearchViewSearch extends JViewLegacy {
 
-    protected $state = null;
-    
+    /**
+     * @var JRegistry
+     */
+    protected $state;
+
+    /**
+     * @var JRegistry
+     */
+    protected $params;
+
+    protected $phrase = "";
+
     public function display($tpl = null) {
         
         $app = JFactory::getApplication();
-        /** @var $app JSite **/
+        /** @var $app JApplicationSite **/
         
         $state          = $this->get('State');
-        $this->params   = $state->params;
+        $this->params   = $state->get("params");
+
         $this->phrase   = $app->getUserStateFromRequest("com_itpgooglesearch.query", "gsquery");
 
         parent::display($tpl);

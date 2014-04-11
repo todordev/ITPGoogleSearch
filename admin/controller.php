@@ -3,7 +3,7 @@
  * @package      ITPGoogleSearch
  * @subpackage   Components
  * @author       Todor Iliev
- * @copyright    Copyright (C) 2013 Todor Iliev <todor@itprism.com>. All rights reserved.
+ * @copyright    Copyright (C) 2014 Todor Iliev <todor@itprism.com>. All rights reserved.
  * @license      http://www.gnu.org/copyleft/gpl.html GNU/GPL
  */
 
@@ -20,13 +20,10 @@ jimport('joomla.application.component.controller');
   */
 class ITPGoogleSearchController extends JControllerLegacy {
     
-    public function display( ) {
+    public function display($cachable = false, $urlparams = array()) {
 
         $app = JFactory::getApplication();
-        /** @var $app JAdministrator */
-        
-        $document = JFactory::getDocument();
-        /** @var $document JDocumentHtml **/
+        /** @var $app JApplicationAdministrator */
         
         $viewName      = $app->input->getCmd('view', 'cpanel');
         $app->input->set("view", $viewName);

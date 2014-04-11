@@ -6,5 +6,9 @@
             <option value="0">JNO</option>
             <option value="1">JYES</option>
         </field>
+        <field name="link_target" type="list" default="_blank" label="COM_ITPGOOGLESEARCH_LINK_TARGET" description="COM_ITPGOOGLESEARCH_LINK_TARGET_DESC">
+            <option value="_self">COM_ITPGOOGLESEARCH_CURRENT_TAB</option>
+            <option value="_blank">COM_ITPGOOGLESEARCH_NEW_TAB</option>
+        </field>
     </fieldset>
 </config>

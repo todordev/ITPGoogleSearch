@@ -3,7 +3,7 @@
  * @package      ITPGoogleSearch
  * @subpackage   Components
  * @author       Todor Iliev
- * @copyright    Copyright (C) 2013 Todor Iliev <todor@itprism.com>. All rights reserved.
+ * @copyright    Copyright (C) 2014 Todor Iliev <todor@itprism.com>. All rights reserved.
  * @license      http://www.gnu.org/copyleft/gpl.html GNU/GPL
  */
 
@@ -27,7 +27,9 @@ class ITPGoogleSearchInstallHelper {
 	 * Display an HTML code for a row
 	 * 
 	 * @param string $title
-	 * @param array $result 
+	 * @param array $result
+	 * @param string $info
+     *
 	 * array(
 	 * 	type => success, important, warning,
 	 * 	text => yes, no, off, on, warning,...

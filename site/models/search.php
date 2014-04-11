@@ -3,7 +3,7 @@
  * @package      ITPGoogleSearch 
  * @subpackage   Components
  * @author       Todor Iliev
- * @copyright    Copyright (C) 2013 Todor Iliev <todor@itprism.com>. All rights reserved.
+ * @copyright    Copyright (C) 2014 Todor Iliev <todor@itprism.com>. All rights reserved.
  * @license      http://www.gnu.org/copyleft/gpl.html GNU/GPL
  */
 
@@ -23,12 +23,16 @@ class ItpGoogleSearchModelSearch extends JModelList {
      *
      * Note. Calling getState in this method will result in recursion.
      *
+     * @param string $ordering
+     * @param string $direction
+     *
      * @return  void
      * @since   1.6
      */
     protected function populateState($ordering = 'ordering', $direction = 'ASC'){
         
         $app = JFactory::getApplication();
+        /** @var $app JApplicationSite **/
         
         $params = $app->getParams();
         $this->setState('params', $params);

@@ -3,7 +3,7 @@
  * @package      ITPGoogleSearch 
  * @subpackage   Components
  * @author       Todor Iliev
- * @copyright    Copyright (C) 2013 Todor Iliev <todor@itprism.com>. All rights reserved.
+ * @copyright    Copyright (C) 2014 Todor Iliev <todor@itprism.com>. All rights reserved.
  * @license      http://www.gnu.org/copyleft/gpl.html GNU/GPL
  */
 
@@ -13,20 +13,20 @@ defined('_JEXEC') or die;
 jimport('joomla.application.component.controller');
 
 class ITPGoogleSearchController extends JControllerLegacy {
-    
+
     /**
      * Method to display a view.
      *
-     * @param   boolean         If true, the view output will be cached
-     * @param   array           An array of safe url parameters and their variable types, for valid values see {@link JFilterInput::clean()}.
+     * @param   boolean         $cachable If true, the view output will be cached
+     * @param   array           $urlparams An array of safe url parameters and their variable types, for valid values see {@link JFilterInput::clean()}.
      *
      * @return  JController     This object to support chaining.
      * @since   1.5
      */
-    public function display($cachable = false, $urlparams = false) {
+    public function display($cachable = false, $urlparams = array()) {
         
         $app = JFactory::getApplication();
-        /** @var $app JSite **/
+        /** @var $app JApplicationSite **/
         
         $cachable   = false; // Huh? Why not just put that in the constructor?
 

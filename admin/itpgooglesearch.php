@@ -3,14 +3,14 @@
  * @package      ITPGoogleSearch
  * @subpackage   Components
  * @author       Todor Iliev
- * @copyright    Copyright (C) 2013 Todor Iliev <todor@itprism.com>. All rights reserved.
+ * @copyright    Copyright (C) 2014 Todor Iliev <todor@itprism.com>. All rights reserved.
  * @license      http://www.gnu.org/copyleft/gpl.html GNU/GPL
  */
 
 // no direct access
 defined('_JEXEC') or die;
 
-require_once (JPATH_COMPONENT_ADMINISTRATOR . DIRECTORY_SEPARATOR. "libraries" . DIRECTORY_SEPARATOR ."init.php");
+require_once (JPATH_COMPONENT_ADMINISTRATOR .DIRECTORY_SEPARATOR. "libraries" .DIRECTORY_SEPARATOR. "init.php");
 
 // Include dependencies
 jimport('joomla.application.component.controller');

@@ -3,7 +3,7 @@
  * @package      ITPGoogleSearch
  * @subpackage   Components
  * @author       Todor Iliev
- * @copyright    Copyright (C) 2013 Todor Iliev <todor@itprism.com>. All rights reserved.
+ * @copyright    Copyright (C) 2014 Todor Iliev <todor@itprism.com>. All rights reserved.
  * @license      http://www.gnu.org/copyleft/gpl.html GNU/GPL
  */
 
@@ -37,7 +37,7 @@ class ItpGoogleSearchVersion {
      * 
      * @var integer
      */
-    public $devLevel   = '4';
+    public $devLevel   = '5';
     
     /**
      * Development Status
@@ -58,7 +58,7 @@ class ItpGoogleSearchVersion {
      * 
      * @var string
      */
-    public $releaseDate= '18-September-2013';
+    public $releaseDate= '11 April, 2014';
     
     /**
      * License
@@ -72,7 +72,7 @@ class ItpGoogleSearchVersion {
      * 
      * @var string
      */
-    public $copyright  = '&copy; 2013 ITPrism. All rights reserved.';
+    public $copyright  = '&copy; 2014 ITPrism. All rights reserved.';
     
     /**
      * URL
@@ -108,7 +108,7 @@ class ItpGoogleSearchVersion {
     }
     
     /**
-     *  Build medium format of the verion text
+     *  Build medium format of the version text.
      *
      * @return string Medium format version
      */

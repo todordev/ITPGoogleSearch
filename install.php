@@ -3,7 +3,7 @@
  * @package      ITPGoogleSearch
  * @subpackage   Components
  * @author       Todor Iliev
- * @copyright    Copyright (C) 2013 Todor Iliev <todor@itprism.com>. All rights reserved.
+ * @copyright    Copyright (C) 2014 Todor Iliev <todor@itprism.com>. All rights reserved.
  * @license      http://www.gnu.org/copyleft/gpl.html GNU/GPL
  */
 
@@ -16,39 +16,47 @@ defined('_JEXEC') or die;
 class pkg_itpGoogleSearchInstallerScript {
 
     /**
-     * method to install the component
+     * Method to install the component.
      *
+     * @param $parent
      * @return void
      */
     public function install($parent) {
     }
 
     /**
-     * method to uninstall the component
+     * Method to uninstall the component.
      *
+     * @param $parent
      * @return void
      */
     public function uninstall($parent) {
     }
 
     /**
-     * method to update the component
+     * Method to update the component.
      *
+     * @param $parent
      * @return void
      */
     public function update($parent) {
     }
 
     /**
-     * method to run before an install/update/uninstall method
+     * Method to run before an install/update/uninstall method.
      *
+     * @param $type
+     * @param $parent
      * @return void
      */
     public function preflight($type, $parent) {
     }
 
     /**
-     * method to run after an install/update/uninstall method
+     * Method to run after an install/update/uninstall method.
+     *
+     * @param $type
+     * @param $parent
      *
      * @return void
      */
@@ -77,7 +85,17 @@ class pkg_itpGoogleSearchInstallerScript {
             $result = array("type" => "success"  , "text" => JText::_("JOFF"));
         }
         ITPGoogleSearchInstallHelper::addRow($title, $result, $info);
-        
+
+        // Display result about PHP version.
+        $title  = JText::_("COM_ITPGOOGLESEARCH_PHP_VERSION");
+        $info   = "";
+        if (version_compare(PHP_VERSION, '5.3.0') < 0) {
+            $result = array("type" => "important", "text" => JText::_("COM_ITPGOOGLESEARC_WARNING"));
+        } else {
+            $result = array("type" => "success", "text" => JText::_("JYES"));
+        }
+        ITPGoogleSearchInstallHelper::addRow($title, $result, $info);
+
         // Installed extensions
         ITPGoogleSearchInstallHelper::addRowHeading(JText::_("COM_ITPGOOGLESEARCH_INSTALLED_EXTENSIONS"));
         
